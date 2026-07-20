@@ -21,7 +21,10 @@ public class Color implements ModInitializer {
 	public static final String MOD_ID = "color";
 	private static final int INTERVAL_TICKS = 20 * 90;
 	private static final String[] COLORED_SUFFIXES = {
-			"wool","_concrete", "_terracotta","_carpet","_stained_glass"};
+			"_wool","_concrete", "_terracotta","_carpet","_stained_glass","_stained_glass_pane","glazed_terracotta",
+	"_shulker_box","_bed"};
+
+
 	private final Random random = new Random();
 	public static boolean gameActive = false;
 	public static int tickCounter = 0;
@@ -67,6 +70,6 @@ public class Color implements ModInitializer {
 			case BROWN -> Formatting.GOLD;
 			case PURPLE -> Formatting.DARK_PURPLE;
 		};
-	}
+	}}
 
-}
+
