@@ -38,8 +38,7 @@ public class Color implements ModInitializer {
 		  }),
 		  Map.entry(DyeColor.MAGENTA, new Block[]{}),
 		  Map.entry(DyeColor.LIGHT_BLUE, new Block[]{
-				  Blocks.ICE, Blocks.PACKED_ICE, Blocks.BLUE_ICE,
-				  Blocks.DIAMOND_BLOCK, Blocks.DIAMOND_ORE
+				  Blocks.ICE, Blocks.PACKED_ICE, Blocks.BLUE_ICE, Blocks.DIAMOND_BLOCK, Blocks.DIAMOND_ORE
 		  }),
 		  Map.entry(DyeColor.YELLOW, new Block[]{
 				  Blocks.GOLD_BLOCK, Blocks.RAW_GOLD_BLOCK, Blocks. GOLD_ORE,
@@ -51,6 +50,11 @@ public class Color implements ModInitializer {
 		  Map.entry(DyeColor.PINK, new Block[]{
 				  Blocks.CHERRY_LOG, Blocks.CHERRY_PLANKS, Blocks.CHERRY_PRESSURE_PLATE, Blocks.CHERRY_LEAVES
 		  }),
+		  Map.entry(DyeColor.GRAY, new Block[]{
+				  Blocks.STONE, Blocks.COBBLESTONE, Blocks.ANDESITE, Blocks.GRAVEL, Blocks.DEEPSLATE
+				  , Blocks.COBBLED_DEEPSLATE, Blocks.TUFF
+		  }),
+		  Map.entry(DyeColor.)
 
   )
 	private final Random random = new Random();
