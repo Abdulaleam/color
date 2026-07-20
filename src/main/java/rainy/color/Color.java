@@ -3,6 +3,7 @@ package rainy.color;
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.DyeColor;
@@ -14,6 +15,7 @@ import org.slf4j.LoggerFactory;
 
 import java.text.Normalizer;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
@@ -24,7 +26,17 @@ public class Color implements ModInitializer {
 			"_wool","_concrete", "_terracotta","_carpet","_stained_glass","_stained_glass_pane","glazed_terracotta",
 	"_shulker_box","_bed"};
 
-
+  private static final Map<DyeColor, Block[]> EXTRA_BLOCKS = Map.ofEntries(
+		  Map.entry(DyeColor.WHITE, new Block[]{
+				  Blocks.SNOW_BLOCK, Blocks.POWDER_SNOW, Blocks.QUARTZ_BLOCK,
+				  Blocks.BONE_BLOCK, Blocks.SEA_LANTERN, Blocks.BIRCH_LOG, Blocks.BIRCH_PLANKS
+		  }),
+		  Map.entry(DyeColor.ORANGE, new Block[]{
+				  Blocks.COPPER_BLOCK, Blocks.RAW_COPPER_BLOCK, Blocks.CUT_COPPER,Blocks.PUMPKIN,
+				  Blocks.CARVED_PUMPKIN, Blocks.JACK_O_LANTERN, Blocks.MAGMA_BLOCK, Blocks.HONEY_BLOCK, Blocks.HONEYCOMB_BLOCK,
+				  Blocks.ACACIA_LOG, Blocks.ACACIA_PLANKS , Blocks.ACACIA_DOOR , Blocks.ACACIA_FENCE_GATE
+		  });
+  )
 	private final Random random = new Random();
 	public static boolean gameActive = false;
 	public static int tickCounter = 0;
