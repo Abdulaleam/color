@@ -35,7 +35,23 @@ public class Color implements ModInitializer {
 				  Blocks.COPPER_BLOCK, Blocks.RAW_COPPER_BLOCK, Blocks.CUT_COPPER,Blocks.PUMPKIN,
 				  Blocks.CARVED_PUMPKIN, Blocks.JACK_O_LANTERN, Blocks.MAGMA_BLOCK, Blocks.HONEY_BLOCK, Blocks.HONEYCOMB_BLOCK,
 				  Blocks.ACACIA_LOG, Blocks.ACACIA_PLANKS , Blocks.ACACIA_DOOR , Blocks.ACACIA_FENCE_GATE
-		  });
+		  }),
+		  Map.entry(DyeColor.MAGENTA, new Block[]{}),
+		  Map.entry(DyeColor.LIGHT_BLUE, new Block[]{
+				  Blocks.ICE, Blocks.PACKED_ICE, Blocks.BLUE_ICE,
+				  Blocks.DIAMOND_BLOCK, Blocks.DIAMOND_ORE
+		  }),
+		  Map.entry(DyeColor.YELLOW, new Block[]{
+				  Blocks.GOLD_BLOCK, Blocks.RAW_GOLD_BLOCK, Blocks. GOLD_ORE,
+				  Blocks.HAY_BLOCK, Blocks.SPONGE, Blocks.WET_SPONGE, Blocks.BEE_NEST, Blocks.BEEHIVE
+		  }),
+		  Map.entry(DyeColor.LIME, new Block[]{
+				  Blocks.SLIME_BLOCK
+		  }),
+		  Map.entry(DyeColor.PINK, new Block[]{
+				  Blocks.CHERRY_LOG, Blocks.CHERRY_PLANKS, Blocks.CHERRY_PRESSURE_PLATE, Blocks.CHERRY_LEAVES
+		  }),
+
   )
 	private final Random random = new Random();
 	public static boolean gameActive = false;
