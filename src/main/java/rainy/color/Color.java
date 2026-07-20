@@ -2,12 +2,20 @@ package rainy.color;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.DyeColor;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 
-import net.minecraft.util.math.random.Random;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.text.Normalizer;
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
 
 public class Color implements ModInitializer {
 	public static final String MOD_ID = "color";
@@ -15,14 +23,50 @@ public class Color implements ModInitializer {
 	private static final String[] COLORED_SUFFIXES = {
 			"wool","_concrete", "_terracotta","_carpet","_stained_glass"};
 	private final Random random = new Random();
-	private boolean gameActive = false;
-	private int tickCounter = 0;
-	private DyeColor currentColor = null;
+	public static boolean gameActive = false;
+	public static int tickCounter = 0;
+	public static DyeColor currentColor = null;
 
 
 	@Override
 	public void onInitialize() {
 
+	}
+	public static Set<Block> blocksForColor(DyeColor color){
+		Set<Block> blocks = new HashSet<>();
+		String name = color.asString();
+		for (String suffix : COLORED_SUFFIXES){
+			Identifier id = Identifier.of("minecraft", name + suffix);
+			Block block = Registries.BLOCK.get(id);
+			if (block != Blocks.AIR){
+				blocks.add(block);
+			}
+		}
+		return blocks;
+	}
+	public static String prettyName(DyeColor color){
+		return color.asString().replace('_',' ');
+
+	}
+	public static Formatting formattingFor(DyeColor color) {
+		return switch (color) {
+			case WHITE -> Formatting.WHITE;
+			case ORANGE -> Formatting.GOLD;
+			case MAGENTA -> Formatting.LIGHT_PURPLE;
+			case LIGHT_BLUE -> Formatting.AQUA;
+			case YELLOW -> Formatting.YELLOW;
+			case LIME -> Formatting.GREEN;
+			case PINK -> Formatting.LIGHT_PURPLE;
+			case GRAY -> Formatting.DARK_GRAY;
+			case CYAN -> Formatting.DARK_AQUA;
+			case LIGHT_GRAY -> Formatting.GRAY;
+			case BLUE -> Formatting.BLUE;
+			case BLACK -> Formatting.BLACK;
+			case RED -> Formatting.RED;
+			case GREEN -> Formatting.DARK_GREEN;
+			case BROWN -> Formatting.GOLD;
+			case PURPLE -> Formatting.DARK_PURPLE;
+		};
 	}
 
 }
