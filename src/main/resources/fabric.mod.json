@@ -1,0 +1,35 @@
+{
+	"schemaVersion": 1,
+	"id": "color",
+	"version": "${version}",
+	"name": "Color",
+	"description": "MINIGAME MINIGAME MINIGAME!!!",
+	"authors": [
+		"Rainy!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/color/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"rainy.color.Color"
+		],
+		"fabric-datagen": [
+			"rainy.color.ColorDataGenerator"
+		],
+		"client": ["rainy.ColorClient"]
+	},
+	"mixins": [
+		"color.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
