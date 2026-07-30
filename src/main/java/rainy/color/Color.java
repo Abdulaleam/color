@@ -18,7 +18,7 @@ import java.util.*;
 
 public class Color implements ModInitializer {
 	public static final String MOD_ID = "color";
-	private static final int INTERVAL_TICKS = 20 * 90;
+	public static final int INTERVAL_TICKS = 20 * 90;
 	private static final String[] COLORED_SUFFIXES = {
 			"_wool","_concrete", "_terracotta","_carpet","_stained_glass","_stained_glass_pane","_glazed_terracotta",
 	"_shulker_box","_bed"};
