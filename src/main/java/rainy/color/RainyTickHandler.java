@@ -24,7 +24,8 @@ public class RainyTickHandler {
         Color.tickCounter++;
         if (Color.tickCounter >= Color.INTERVAL_TICKS){
             Color.tickCounter = 0;
-            // add commands here
+            RainyCommands.pickNewColor();
+            RainyCommands.announceColor(server);
         }
         if (Color.currentColor != null) {
             checkPlayersForContact(server);

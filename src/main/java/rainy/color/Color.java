@@ -96,6 +96,8 @@ public class Color implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		RainyCommands.register();
+		RainyTickHandler.register();
 
 
 	}
