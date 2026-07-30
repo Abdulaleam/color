@@ -14,16 +14,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.text.Normalizer;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 public class Color implements ModInitializer {
 	public static final String MOD_ID = "color";
 	private static final int INTERVAL_TICKS = 20 * 90;
 	private static final String[] COLORED_SUFFIXES = {
-			"_wool","_concrete", "_terracotta","_carpet","_stained_glass","_stained_glass_pane","glazed_terracotta",
+			"_wool","_concrete", "_terracotta","_carpet","_stained_glass","_stained_glass_pane","_glazed_terracotta",
 	"_shulker_box","_bed"};
 
   private static final Map<DyeColor, Block[]> EXTRA_BLOCKS = Map.ofEntries(
@@ -54,9 +51,43 @@ public class Color implements ModInitializer {
 				  Blocks.STONE, Blocks.COBBLESTONE, Blocks.ANDESITE, Blocks.GRAVEL, Blocks.DEEPSLATE
 				  , Blocks.COBBLED_DEEPSLATE, Blocks.TUFF
 		  }),
-		  Map.entry(DyeColor.)
+		  Map.entry(DyeColor.LIGHT_GRAY, new Block[]{
+				  Blocks.IRON_BLOCK, Blocks.RAW_IRON_BLOCK, Blocks.IRON_ORE, Blocks.CALCITE, Blocks.DIORITE
+				  , Blocks.POLISHED_ANDESITE, Blocks.SMOOTH_STONE
+		  }),
+		  Map.entry(DyeColor.CYAN, new Block[]{
+				  Blocks.PRISMARINE, Blocks.PRISMARINE_BRICKS, Blocks.DARK_PRISMARINE, Blocks.WARPED_NYLIUM,
+				  Blocks.WARPED_BUTTON, Blocks.WARPED_PLANKS, Blocks.WARPED_STEM
+				  }
+				  ),
+		  Map.entry(DyeColor.PURPLE, new Block[]{
+				  Blocks.AMETHYST_BLOCK, Blocks.BUDDING_AMETHYST, Blocks.PURPUR_BLOCK, Blocks.PURPUR_PILLAR, Blocks.CRYING_OBSIDIAN
 
-  )
+		  }),
+		  Map.entry(DyeColor.BROWN, new Block[]{
+				  Blocks.DIRT, Blocks.COARSE_DIRT, Blocks.PODZOL, Blocks.ROOTED_DIRT,Blocks.MUD, Blocks.SOUL_SOIL, Blocks.SOUL_SAND
+				  , Blocks.OAK_LOG, Blocks.OAK_PLANKS, Blocks.SPRUCE_PLANKS, Blocks.MANGROVE_LOG, Blocks.SPRUCE_LOG,
+				  Blocks.MANGROVE_PLANKS
+		  }),
+		  Map.entry(DyeColor.GREEN, new Block[]{
+				  Blocks.EMERALD_BLOCK, Blocks.EMERALD_ORE, Blocks.MOSS_BLOCK, Blocks.MOSS_CARPET, Blocks.CACTUS, Blocks.MELON,
+		  }),
+		  Map.entry(DyeColor.RED, new Block[]{
+				  Blocks.REDSTONE_BLOCK, Blocks.REDSTONE_ORE, Blocks.NETHER_BRICKS, Blocks.RED_BED, Blocks.RED_SAND,
+				  Blocks.REDSTONE_WIRE, Blocks.CRIMSON_DOOR, Blocks.CRIMSON_PLANKS, Blocks.NETHER_WART_BLOCK,
+				  Blocks.RED_MUSHROOM
+		  }),
+		  Map.entry(DyeColor.BLUE, new Block[]{
+				  Blocks.LAPIS_BLOCK, Blocks.LAPIS_ORE
+		  }),
+		  Map.entry(DyeColor.BLACK, new Block[]{
+				  Blocks.COAL_BLOCK, Blocks.COAL_ORE, Blocks.NETHERITE_BLOCK, Blocks.OBSIDIAN, Blocks.BASALT,
+				  Blocks.POLISHED_ANDESITE, Blocks.POLISHED_BASALT, Blocks.BLACKSTONE, Blocks.ANCIENT_DEBRIS, Blocks.DARK_OAK_DOOR
+				  , Blocks.DARK_OAK_PLANKS
+		  })
+
+  );
+
 	private final Random random = new Random();
 	public static boolean gameActive = false;
 	public static int tickCounter = 0;
@@ -65,6 +96,7 @@ public class Color implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+
 
 	}
 	public static Set<Block> blocksForColor(DyeColor color){
@@ -76,6 +108,10 @@ public class Color implements ModInitializer {
 			if (block != Blocks.AIR){
 				blocks.add(block);
 			}
+		}
+		Block[] extras = EXTRA_BLOCKS.get(color);
+		if (extras != null) {
+			Collections.addAll(blocks, extras);
 		}
 		return blocks;
 	}
