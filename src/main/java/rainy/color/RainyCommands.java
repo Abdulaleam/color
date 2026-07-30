@@ -8,12 +8,16 @@ import net.minecraft.util.DyeColor;
 import net.minecraft.util.Formatting;
 import org.apache.logging.log4j.core.jmx.Server;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Random;
 
 import static rainy.color.Color.gameActive;
 
 public class RainyCommands {
     private static final Random RANDOM = new Random();
+    private static final int HISTORY_SIZE = 3;
+    private static final Deque<DyeColor> recentColors = new ArrayDeque<>();
 
     public static void register() {
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
@@ -62,13 +66,17 @@ public class RainyCommands {
         DyeColor next;
         do {
             next = colors[RANDOM.nextInt(colors.length)];
-        } while (next == Color.currentColor && colors.length > 1);
+        } while (recentColors.contains(next) && recentColors.size() < colors.length - 1);
         Color.currentColor = next;
+        recentColors.addLast(next);
+        if (recentColors.size() > HISTORY_SIZE) {
+            recentColors.removeFirst();
+        }
     }
     static void announceColor(MinecraftServer server){
         DyeColor color = Color.currentColor;
         Formatting formatting = Color.formattingFor(color);
-        Text msg = Text.literal(" \u26A0 DON'T TOUCH" + Color.prettyName(color).toUpperCase() + "! \u26A0")
+        Text msg = Text.literal(" \u26A0 DON'T TOUCH " + Color.prettyName(color).toUpperCase() + "! \u26A0")
                 .formatted(Formatting.BOLD);
         server.getPlayerManager().broadcast(msg, false);
     }

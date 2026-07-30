@@ -43,7 +43,7 @@ public class RainyTickHandler {
             if (isTouchingAny(player, forbiddenBlocks)) {
                 player.kill();
                 server.getPlayerManager().broadcast(
-                        Text.literal(player.getName().getString() + " touched" + Color.prettyName(currentColor) + " and died")
+                        Text.literal(player.getName().getString() + " touched " + Color.prettyName(currentColor) + " and died")
                                 .formatted(Formatting.RED),
                 false);
             }
