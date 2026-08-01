@@ -12,6 +12,7 @@ import net.minecraft.util.Identifier;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import rainy.color.item.RainyItems;
 
 import java.text.Normalizer;
 import java.util.*;
@@ -71,6 +72,7 @@ public class Color implements ModInitializer {
 		  }),
 		  Map.entry(DyeColor.GREEN, new Block[]{
 				  Blocks.EMERALD_BLOCK, Blocks.EMERALD_ORE, Blocks.MOSS_BLOCK, Blocks.MOSS_CARPET, Blocks.CACTUS, Blocks.MELON,
+				  Blocks.GRASS_BLOCK
 		  }),
 		  Map.entry(DyeColor.RED, new Block[]{
 				  Blocks.REDSTONE_BLOCK, Blocks.REDSTONE_ORE, Blocks.NETHER_BRICKS, Blocks.RED_BED, Blocks.RED_SAND,
@@ -96,6 +98,7 @@ public class Color implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		RainyItems.registerRainyItems();
 		RainyCommands.register();
 		RainyTickHandler.register();
 

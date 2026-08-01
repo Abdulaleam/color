@@ -28,7 +28,7 @@ public class RainyCommands {
 
                         if (Color.gameActive) {
                             ctx.getSource().sendFeedback(() ->
-                                    Text.literal("The game is already running ;-; , did you even start it").formatted(Formatting.YELLOW), false);
+                                    Text.literal("The game is already running ;-; , bro wake up bleh").formatted(Formatting.YELLOW), false);
                             return 0;
                         }
 
