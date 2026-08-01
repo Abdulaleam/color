@@ -12,6 +12,7 @@ import net.minecraft.util.Identifier;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import rainy.color.item.RainyItemGroups;
 import rainy.color.item.RainyItems;
 
 import java.text.Normalizer;
@@ -98,6 +99,7 @@ public class Color implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		RainyItemGroups.registerRainyItemGroups();
 		RainyItems.registerRainyItems();
 		RainyCommands.register();
 		RainyTickHandler.register();
