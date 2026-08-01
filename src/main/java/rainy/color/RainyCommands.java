@@ -61,7 +61,7 @@ public class RainyCommands {
                     }));
         });
     }
-    static void pickNewColor() {
+    public static void pickNewColor() {
         DyeColor[] colors = DyeColor.values();
         DyeColor next;
         do {
@@ -73,7 +73,7 @@ public class RainyCommands {
             recentColors.removeFirst();
         }
     }
-    static void announceColor(MinecraftServer server){
+    public static void announceColor(MinecraftServer server){
         DyeColor color = Color.currentColor;
         Formatting formatting = Color.formattingFor(color);
         Text msg = Text.literal(" \u26A0 DON'T TOUCH " + Color.prettyName(color).toUpperCase() + "! \u26A0")
