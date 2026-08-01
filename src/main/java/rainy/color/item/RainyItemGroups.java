@@ -19,6 +19,7 @@ public class RainyItemGroups {
             .entries((displayContext, entries) -> {
                 entries.add(RainyItems.START);
                 entries.add(RainyItems.STOP);
+                entries.add(RainyItems.RED);
             })
 
 

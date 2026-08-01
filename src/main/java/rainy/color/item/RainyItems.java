@@ -12,6 +12,7 @@ public class RainyItems {
     public static final Item START = registerItem("start", new GoItem(new Item.Settings().maxCount(1)));
     public static final Item STOP = registerItem("stop", new PauseItem(new Item.Settings().maxCount(1)));
     public static final Item RED = registerItem("red", new Red(new Item.Settings().maxCount(1)));
+    public static final Item GREEN = registerItem("green", new Green(new Item.Settings().maxCount(1)));
 
     private static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, Identifier.of(Color.MOD_ID, name), item);
