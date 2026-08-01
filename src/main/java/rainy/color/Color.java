@@ -95,7 +95,7 @@ public class Color implements ModInitializer {
 	public static boolean gameActive = false;
 	public static int tickCounter = 0;
 	public static DyeColor currentColor = null;
-
+    public static boolean colorLocked = false;
 
 	@Override
 	public void onInitialize() {

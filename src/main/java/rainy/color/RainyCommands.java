@@ -54,6 +54,7 @@ public class RainyCommands {
 
                         Color.gameActive = false;
                         Color.currentColor = null;
+                        Color.colorLocked = false;
                         ctx.getSource().getServer().getPlayerManager().broadcast(
                                 Text.literal("Don't Touch the Color has stopped , aww dude :( ").formatted(Formatting.GRAY),
                                 false);
@@ -77,7 +78,7 @@ public class RainyCommands {
         DyeColor color = Color.currentColor;
         Formatting formatting = Color.formattingFor(color);
         Text msg = Text.literal(" \u26A0 DON'T TOUCH " + Color.prettyName(color).toUpperCase() + "! \u26A0")
-                .formatted(Formatting.BOLD);
+                .formatted(formatting, Formatting.BOLD);
         server.getPlayerManager().broadcast(msg, false);
     }
 }
