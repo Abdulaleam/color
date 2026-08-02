@@ -1,5 +1,9 @@
 {
   "item.color.start": "§e§l★ Start ★",
   "item.color.stop": "§c§l⛔ Stop ⛔",
-  "itemgroup.color.touch_color": "§6§l✦ Don't Touch the Color ✦"
+  "itemgroup.color.touch_color": "§6§l✦ Don't Touch the Color ✦",
+
+  "item.color.red": "§c§l❤ Red ❤",
+  "item.color.green": "§a§l✿ Green ✿",
+  "item.color.gray": "§7§l◆ Gray ◆"
 }
