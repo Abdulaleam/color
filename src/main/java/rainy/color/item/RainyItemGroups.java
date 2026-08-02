@@ -21,7 +21,7 @@ public class RainyItemGroups {
                 entries.add(RainyItems.STOP);
                 entries.add(RainyItems.RED);
                 entries.add(RainyItems.GREEN);
-                entries.add(RainyItems.Gray);
+                entries.add(RainyItems.GRAY);
             })
 
 
