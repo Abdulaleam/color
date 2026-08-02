@@ -47,3 +47,9 @@ uh , let's see which one of us gets to the end first without dying!!!!!
 
 Install Like a Normal Fabric File From Modrinth Website
 Supported For Fabric 1.21.1 Only Till now.
+
+https://modrinth.com/mod/dont-touch-the-color
+
+go to %appdata% then roaming then MINECRAFT
+create a Mods Folder and add it there
+/ or just simply use the modrinth launcher!! its very easy
