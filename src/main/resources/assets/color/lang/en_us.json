@@ -5,5 +5,8 @@
 
   "item.color.red": "§c§l❤ Red ❤",
   "item.color.green": "§a§l✿ Green ✿",
-  "item.color.gray": "§7§l◆ Gray ◆"
+  "item.color.gray": "§7§l◆ Gray ◆",
+  "item.color.purple": "§5§l✦ Purple ✦",
+  "item.color.blue": "§9§l✦ Blue ✦",
+  "item.color.yellow": "§e§l✦ Yellow ✦"
 }
